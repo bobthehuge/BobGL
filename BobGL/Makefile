@@ -12,7 +12,7 @@ install: comp pack
 	echo "Don't forget to add current path to lib to 'PKG_CONFIG_PATH'"
 
 comp:
-	$(CC) $(CFLAGS) -c lib/bobgl.c -o lib/bobgl.o
+	$(CC) $(CFLAGS) -c bobgl.c -o lib/bobgl.o
 
 pack:
 	ar rcs ./lib/libbobgl.a ./lib/bobgl.o
