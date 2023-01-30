@@ -14,7 +14,7 @@ extern void bglOnLoad(void);
 extern void bglOnUpdate(void);
 extern void bglOnUnload(void);
 
-GLFWwindow* window;
+extern GLFWwindow* window;
 
 void bglInit(void);
 void bglRunLoop(void);
