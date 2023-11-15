@@ -2,6 +2,11 @@
 
 Simple GLFW and GLEW based Graphical Library
 
+## Compile
+
+1. create dir named 'lib'
+2. make
+
 ## Get Started
 
 1. create c file
