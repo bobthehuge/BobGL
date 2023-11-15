@@ -3,7 +3,7 @@ includedir=${prefix}/include
 libdir=${prefix}/lib
 
 Name: BobGL
-Description: Simple OpenGL API
+Description: Simple OpenGL library built upon glfw
 Version: 1.0.0
 Cflags: -I${includedir}
 Libs: -L${libdir} -lbobgl -lGL -lglfw -lGLEW

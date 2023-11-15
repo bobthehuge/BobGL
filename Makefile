@@ -1,6 +1,6 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -O3 `pkg-config --cflags --libs gl glfw3 glew` `pkg-config --cflags bobgl`
-LDFLAGS = `pkg-config --cflags --libs gl glfw3 glew` `pkg-config --cflags bobgl`
+CFLAGS = -Wall -Wextra -O3 -g `pkg-config --cflags --libs gl glfw3 glew` `pkg-config --cflags bobgl`
+LDFLAGS = `pkg-config --libs gl glfw3 glew` `pkg-config --cflags bobgl`
 
 SRC = bobgl.c
 OBJ = ${SRC:.c=.o}
@@ -12,11 +12,11 @@ install: comp pack
 	echo "Don't forget to add current path to lib to 'PKG_CONFIG_PATH'"
 
 comp:
-	$(CC) $(CFLAGS) -c bobgl.c -o lib/bobgl.o
+	$(CC) $(CFLAGS) -c src/$(SRC) -o lib/$(OBJ)
 
 pack:
-	ar rcs ./lib/libbobgl.a ./lib/bobgl.o
+	ar rcs ./lib/libbobgl.a ./lib/$(OBJ)
 
 clean:
-	${RM} ./lib/bobgl.o
+	$(RM) ./lib/$(OBJ)
 # END
