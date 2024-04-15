@@ -59,6 +59,7 @@ GLuint bgl_new_shader(GLenum shaderType, const char* file)
 
 void bgl_def_keycall(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
+    (void) window;
     (void) scancode;
     (void) action;
     (void) mods;
@@ -68,10 +69,6 @@ void bgl_def_keycall(GLFWwindow* window, int key, int scancode, int action, int 
         if (key == GLFW_KEY_ESCAPE)
         {
             exit(0);
-        }
-        if (key == GLFW_KEY_Q)
-        {
-            glfwSetWindowShouldClose(window, GL_TRUE);
         }
     }
 }
@@ -119,13 +116,13 @@ void bgl_loop(void (*on_update)(void))
 
     while (!glfwWindowShouldClose(window))
     {
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-
         if (on_update != NULL)
         {
             (*on_update)();
         }
+
+        glfwSwapBuffers(window);
+        glfwPollEvents();
     }
 
 }

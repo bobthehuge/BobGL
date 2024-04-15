@@ -33,8 +33,45 @@ struct BGL_Winopt
 #define BGL_DEFAULT_WINOPT { 860, 640, "BobGL", 1, 0 }
 #endif
 
-#ifndef BGL_RECT_VERT
-#define BGL_RECT_VERT {-1.0,1.0,1.0,1.0,1.0,-1.0,1.0,-1.0,-1.0,-1.0,-1.0,1.0}
+#ifndef BGL_RECT_IDX
+#define BGL_RECT_IDX { 0, 1, 3, 1, 2, 3 } //default rectangles index array
+#endif
+
+#ifndef BGL_TOP_RX
+#define BGL_TOP_RX 1.0
+#endif
+#ifndef BGL_TOP_RY
+#define BGL_TOP_RY 1.0
+#endif
+
+#ifndef BGL_TOP_LX
+#define BGL_TOP_LX -1.0
+#endif
+#ifndef BGL_TOP_LY
+#define BGL_TOP_LY 1.0
+#endif
+
+#ifndef BGL_BOT_RX
+#define BGL_BOT_RX 1.0
+#endif
+#ifndef BGL_BOT_RY
+#define BGL_BOT_RY -1.0
+#endif
+
+#ifndef BGL_BOT_LX
+#define BGL_BOT_LX -1.0
+#endif
+#ifndef BGL_BOT_LY
+#define BGL_BOT_LY -1.0
+#endif
+
+#ifndef BGL_WIN_RECT
+#define BGL_WIN_RECT {\
+    BGL_TOP_RX, BGL_TOP_RY,\
+    BGL_BOT_RX, BGL_BOT_RY,\
+    BGL_BOT_LX, BGL_BOT_LY,\
+    BGL_TOP_LX, BGL_TOP_LY,\
+}
 #endif
 
 ///////////////////////////////////////////////////////////////
